@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sachin Kumar | Elite Full Stack Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #6366f1;
+    --secondary: #a855f7;
+    --bg: #030305;
+    --card: rgba(255,255,255,0.03);
+    --border: rgba(255,255,255,0.08);
+    --text: #fff;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Plus Jakarta Sans', sans-serif; cursor:none; }
+
+body { background:var(--bg); color:var(--text); overflow-x:hidden; }
+
+/* cursor */
+#cursor {
+    width:20px; height:20px;
+    border:2px solid var(--primary);
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+}
+
+/* progress */
+#progress {
+    position:fixed;
+    top:0; left:0;
+    height:4px;
+    width:0%;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+}
+
+/* layout */
+.container { max-width:1200px; margin:auto; padding:2rem; }
+
+nav {
+    display:flex; justify-content:space-between;
+    padding:1rem 2rem;
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--border);
+    border-radius:20px;
+    position:sticky; top:20px;
+}
+
+.logo { font-size:1.5rem; font-weight:800; }
+.logo span { color:var(--primary); }
+
+.hero {
+    min-height:90vh;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+    gap:2rem;
+}
+
+.profile {
+    width:180px; height:180px;
+    border-radius:50%;
+    border:4px solid var(--primary);
+}
+
+.gradient-text {
+    font-size:clamp(3rem,8vw,5rem);
+    background:linear-gradient(to right,#fff,var(--primary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+}
+
+.card {
+    padding:2rem;
+    border-radius:20px;
+    background:var(--card);
+    border:1px solid var(--border);
+    transition:0.3s;
+}
+.card:hover {
+    transform:translateY(-10px);
+    border-color:var(--primary);
+}
+
+.skills-container {
+    display:flex; flex-wrap:wrap;
+    gap:10px; justify-content:center;
+}
+
+.skill-tag {
+    padding:10px 20px;
+    border-radius:50px;
+    background:var(--card);
+    border:1px solid var(--border);
+}
+
+.btn {
+    padding:12px 25px;
+    background:var(--primary);
+    color:white;
+    border-radius:50px;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.section-title {
+    text-align:center;
+    font-size:2rem;
+    margin:3rem 0;
+}
+
+footer {
+    text-align:center;
+    margin-top:5rem;
+    border-top:1px solid var(--border);
+    padding:2rem;
+}
+
+/* MODAL */
+.modal {
+    display:none;
+    position:fixed;
+    z-index:10001;
+    left:0; top:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(8px);
+}
+
+.modal-content {
+    background:var(--card);
+    border:1px solid var(--border);
+    margin:10% auto;
+    padding:2rem;
+    width:90%;
+    max-width:400px;
+    border-radius:20px;
+    text-align:center;
+    animation:pop 0.4s ease;
+}
+
+@keyframes pop {
+    from { transform:scale(0.7); opacity:0; }
+    to { transform:scale(1); opacity:1; }
+}
+
+.close {
+    position:absolute;
+    right:25px;
+    top:15px;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+    * { cursor:auto; }
+    #cursor { display:none; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="cursor"></div>
+<div id="progress"></div>
+
+<div class="container">
+
+<nav>
+    <div class="logo">SACHIN<span>.</span>DEV</div>
+    <a href="resume.pdf" class="btn">Resume</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="sachin (2).jpg" class="profile">
+    <h1 class="gradient-text">Sachin Kumar</h1>
+    <h2><span class="typing"></span></h2>
+
+    <p style="color:#aaa; max-width:600px;">
+        MERN Stack Developer building scalable and modern web applications.
+    </p>
+
+    <a href="#projects" class="btn">View Work</a>
+</section>
+
+<!-- ABOUT -->
+<section>
+<h2 class="section-title">About Me</h2>
+<p style="text-align:center; color:#aaa; max-width:800px; margin:auto;">
+    Passionate developer focused on building real-world projects using MERN stack.
+</p>
+</section>
+
+<!-- PROJECTS -->
+<h2 class="section-title" id="projects">Projects</h2>
+<div class="grid">
+<div class="card"><h3>Online Voting System</h3></div>
+<div class="card"><h3>Get Me Chai</h3></div>
+<div class="card"><h3>RWA Portal</h3></div>
+</div>
+
+<!-- SKILLS -->
+<h2 class="section-title">Skills</h2>
+<div class="skills-container">
+<div class="skill-tag">MongoDB</div>
+<div class="skill-tag">React</div>
+<div class="skill-tag">Node</div>
+</div>
+
+<!-- CONTACT -->
+<section style="text-align:center;">
+<h2 class="section-title">Contact</h2>
+<a class="btn" onclick="openModal()">Hire Me 🚀</a>
+</section>
+
+<footer>
+<p>© 2026 Sachin Kumar</p>
+</footer>
+
+</div>
+
+<!-- MODAL -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Contact Me 📞</h2>
+        <p>Email: sachin8006243590@gmail.com</p>
+        <p>Phone: +91 8006243590</p>
+
+        <div style="margin-top:20px; display:flex; gap:15px; justify-content:center;">
+            <a href="mailto:sachin8006243590@gmail.com" class="btn">Email</a>
+            <a href="tel:+919690317716" class="btn">Call</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+// typing
+new Typed(".typing", {
+strings:["MERN Developer 🚀","Full Stack Engineer"],
+typeSpeed:60,
+backSpeed:40,
+loop:true
+});
+
+// cursor
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+});
+
+// scroll
+window.onscroll=function(){
+let winScroll=document.documentElement.scrollTop;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+document.getElementById("progress").style.width=(winScroll/height)*100+"%";
+};
+
+// modal
+function openModal(){
+document.getElementById("contactModal").style.display="block";
+}
+
+function closeModal(){
+document.getElementById("contactModal").style.display="none";
+}
+
+window.onclick=function(e){
+let modal=document.getElementById("contactModal");
+if(e.target==modal){
+modal.style.display="none";
+}
+};
+</script>
+
+</body>
+</html>
